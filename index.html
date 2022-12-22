@@ -40,8 +40,9 @@
       var profileImage;
       var intials;
       if ($(".initial-avatar").text().indexOf(" ") == -1) {
-        intials = $(".initial-avatar").text().charAt(0);
-        profileImage = $(".initial-avatar").text(intials);
+        profileImage = $(".initial-avatar").text(
+          $(".initial-avatar").text().charAt(0)
+        );
       } else {
         name = $(".initial-avatar").text().split(" ");
         firstName = name[0];
