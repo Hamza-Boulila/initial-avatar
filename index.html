@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatar</title>
+    <style>
+      .initial-avatar {
+        /* Center the content */
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        /* Colors */
+        background-color: #d1d5db;
+        color: #fff;
+
+        /* Rounded border */
+        border-radius: 50%;
+        height: 3rem;
+        width: 3rem;
+      }
+      .initial-avatar::after {
+        content: attr(data-label);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="initial-avatar" data-label="">HAMZA</div>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      var name;
+      var firstName;
+      var lastName;
+      var profileImage;
+      var intials;
+      if ($(".initial-avatar").text().indexOf(" ") == -1) {
+        intials = $(".initial-avatar").text().charAt(0);
+        profileImage = $(".initial-avatar").text(intials);
+      } else {
+        name = $(".initial-avatar").text().split(" ");
+        firstName = name[0];
+        lastName = name[1];
+        var intials = firstName.charAt(0) + lastName.charAt(0);
+        profileImage = $(".initial-avatar").text(intials);
+      }
+    });
+  </script>
+</html>
